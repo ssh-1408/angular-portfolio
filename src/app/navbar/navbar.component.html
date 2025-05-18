@@ -1,0 +1,40 @@
+<nav class="navbar" [class.open]="isMobileMenuOpen">
+    <div class="navbar-brand">Svetlana Shmeleva</div>
+  
+    <!-- @if: hamburger when closed -->
+    @if (!isMobileMenuOpen) {
+      <button class="navbar-toggle" (click)="toggleMobileMenu()">
+        ☰
+      </button>
+    }
+    
+    <!-- @if: close icon when open -->
+    @if (isMobileMenuOpen) {
+      <button class="navbar-close" (click)="closeNavbar()">
+        ✕
+      </button>
+    }
+  
+    <ul class="navbar-menu" [class.mobile]="isMobileMenuOpen">
+      <li class="navbar-item">
+        <a routerLink="/" routerLinkActive="active" (click)="closeNavbar()">About Me</a>
+      </li>
+      <li class="navbar-item">
+        <a routerLink="/portfolio" routerLinkActive="active" (click)="closeNavbar()">Portfolio</a>
+      </li>
+      <li class="navbar-item">
+        <a href="https://www.linkedin.com/in/svetlana-shmeleva-55562933/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <i class="fab fa-linkedin"></i> LinkedIn
+        </a>
+      </li>
+      <li class="navbar-item">
+        <a href="https://github.com/ssh-1408" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <i class="fab fa-github"></i> GitHub
+        </a>
+      </li>
+      <li class="navbar-item">
+        <a routerLink="/contact" routerLinkActive="active" (click)="closeNavbar()">Contact</a>
+      </li>
+    </ul>
+  </nav>
+  
